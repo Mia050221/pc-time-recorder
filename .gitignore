@@ -1,0 +1,16 @@
+# Python 缓存文件
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# PyInstaller 打包生成的文件
+build/
+dist/
+*.spec
+
+# 其他临时文件和配置
+*.log
+*.tmp
+.vscode/
+.idea/

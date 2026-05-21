@@ -58,8 +58,12 @@ class TimeTracker(QObject):
         self._today_uptime += 1
 
         idle_sec = IdleDetector.get_idle_seconds()
-        if idle_sec < IDLE_THRESHOLD_SECONDS:
+        if idle_sec < 300:
             self._today_active += 1
+            self._remind_counter += 1
+            self._check_reminder()
+        else:
+            self._remind_counter = 0
 
         self._app_monitor.tick()
 
@@ -67,12 +71,6 @@ class TimeTracker(QObject):
         if currently_idle != self._was_idle:
             self._was_idle = currently_idle
             self.status_changed.emit("已离开" if currently_idle else "活跃中")
-
-        if idle_sec < 300:
-            self._remind_counter += 1
-            self._check_reminder()
-        elif idle_sec >= 600:
-            self._remind_counter = 0
 
         self._emit_all()
         self.app_ranking_changed.emit(self._app_monitor.get_sorted())

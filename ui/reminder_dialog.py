@@ -12,9 +12,9 @@ class _ReminderDialog(QDialog):
 
         GREEN = "#4CAF50"
         GREEN_DARK = "#388E3C"
-        BG = "#1E1E1E"
-        WHITE = "#E0E0E0"
-        GRAY = "#999999"
+        BG = "#FFFFFF"
+        WHITE = "#333333"
+        GRAY = "#888888"
 
         self.setStyleSheet(f"background-color: {BG};")
 
@@ -43,7 +43,7 @@ class _ReminderDialog(QDialog):
 
         line = QFrame()
         line.setFixedHeight(1)
-        line.setStyleSheet("background-color: #2A2A2A;")
+        line.setStyleSheet("background-color: #E0E0E0;")
         layout.addWidget(line)
 
         body = QVBoxLayout()

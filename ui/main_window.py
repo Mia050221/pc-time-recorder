@@ -49,7 +49,7 @@ class MainWindow(QMainWindow):
                 font-family: {FONT};
             }}
             QToolTip {{
-                background-color: #2A2A2A;
+                background-color: #FFFFFF;
                 color: {COLOR_TEXT};
                 border: 1px solid {COLOR_BORDER};
                 padding: 4px;
@@ -283,7 +283,7 @@ class MainWindow(QMainWindow):
         label_hint.setAlignment(Qt.AlignCenter)
         label_hint.setWordWrap(True)
         label_hint.setStyleSheet(
-            f"color: #666666; font-size: 12px; font-family: {FONT};"
+            f"color: #ADB5BD; font-size: 12px; font-family: {FONT};"
         )
         inner.addWidget(label_hint)
 
@@ -300,7 +300,7 @@ class MainWindow(QMainWindow):
 
         summary_bar = QFrame()
         summary_bar.setStyleSheet(
-            "background-color: #263E26; "
+            "background-color: #E8F5E9; "
             "border-radius: 8px;"
         )
         summary_layout = QHBoxLayout(summary_bar)
@@ -316,7 +316,7 @@ class MainWindow(QMainWindow):
         self._ranking_summary = QLabel("共监控 <b>0</b> 个应用，今日最常用应用：<b>暂无数据</b>")
         self._ranking_summary.setWordWrap(True)
         self._ranking_summary.setStyleSheet(
-            "color: #A5D6A7; font-size: 13px; font-family: {FONT};"
+            "color: #2E7D32; font-size: 13px; font-family: {FONT};"
         )
         summary_layout.addWidget(self._ranking_summary, 1)
         layout.addWidget(summary_bar)
@@ -474,7 +474,7 @@ class MainWindow(QMainWindow):
             for col, text in enumerate(["暂无记录", "—", "—", "—"]):
                 item = QTableWidgetItem(text)
                 item.setTextAlignment(Qt.AlignCenter)
-                item.setForeground(QColor("#666666"))
+                item.setForeground(QColor("#ADB5BD"))
                 self._history_table.setItem(0, col, item)
             self._history_table.setRowHeight(0, 44)
 
@@ -664,7 +664,7 @@ class MainWindow(QMainWindow):
                 text = "暂无数据" if col > 1 else ("—" if col == 0 else "等待记录…")
                 item = QTableWidgetItem(text)
                 item.setTextAlignment(Qt.AlignCenter)
-                item.setForeground(QColor("#666666"))
+                item.setForeground(QColor("#ADB5BD"))
                 self._ranking_table.setItem(i, col, item)
 
     def _show_reminder(self):
@@ -823,7 +823,7 @@ class MainWindow(QMainWindow):
                 border-bottom: 2px solid {COLOR_PRIMARY_LIGHT};
             }}
             QTableWidget::item:alternate {{
-                background-color: #2A2A2A;
+                background-color: #F5F7FA;
             }}
         """
 
@@ -851,7 +851,7 @@ class MainWindow(QMainWindow):
                 font-size: 15px;
                 font-family: {FONT};
                 color: {COLOR_TEXT};
-                background: #2A2A2A;
+                background: #FFFFFF;
                 min-width: 150px;
             }}
             QSpinBox:focus {{
